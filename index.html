@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Collage</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <link href="style.css" rel="stylesheet" type="text/css">
+        <script type="text/javascript" src="jquery.min.js"></script>
+        <script type="text/javascript" src="jquery-ui-1.8.23.custom.min.js"></script>
+        <script type="text/javascript" src="jquery.mousewheel.js"></script>
+        <script type="text/javascript" src="collage.js"></script>
+    </head>
+    <body>
+        <div id="container" style="height: 600px;">
+            <div id="header">
+               <div class="button button_green"><button onclick="window.location.replace('');">Refresh</button></div>
+               <div class="button button_blue"><button onclick="load_code();">Load</button></div>
+               <div class="button button_gray"><button onclick="save_code();">Save</button></div>
+            </div>
+            <table class="editor_wrapper" cellspacing="0" cellpadding="0">
+                <tr valign="top">
+                    <td class="first">
+                        <div id="editor">
+                            <div id="controls">
+                               <span>To zoom in or zoom out wheel middle mouse button</span>
+                               <div class="button button_green"><button onclick="Editor.remove();">Remove</button></div>
+                               <div class="button button_green"><button onclick="Editor.flop();">Flop</button></div>
+                               <div class="button button_green"><button onclick="Editor.flip();">Flip</button></div>
+                               <div class="button button_green"><button onclick="Editor.fit();">Fit</button></div>
+                            </div>
+                            <div id="canvas"> </div>
+                        </div>
+                    </td>
+                    <td class="second">
+                        <div id="elements"> <img src="imgs/loader.gif"/></div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="modal_background"> </div>
+
+        <div id="save_dialog" class="modal">
+            <div class="modal_wrapper">
+                <div class="title">Код для сохранения</div>
+                <div class="content">
+                    <textarea id="save_code" style="width: 100%; height: 300px;">sdklfjsdlkf</textarea>
+                </div>
+                <div class="buttons">
+                    <div class="button button_blue"><button onclick="hide_modal('save_dialog');">OK</button></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="load_dialog" class="modal">
+            <div class="modal_wrapper">
+                <div class="title">Код для загрузки</div>
+                <div class="content">
+                    <textarea id="load_code" style="width: 100%; height: 300px;"></textarea>
+                </div>
+                <div class="buttons">
+                    <div class="button button_blue"><button onclick="load_json();">OK</button></div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
